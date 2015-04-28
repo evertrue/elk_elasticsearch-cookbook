@@ -7,3 +7,6 @@ long_description 'Installs/Configures elk_elasticsearch'
 version          '0.0.1'
 
 supports 'ubuntu', '>= 12.04'
+
+depends 'elasticsearch', '~> 0.3'
+depends 'storage', '~> 2.2'
