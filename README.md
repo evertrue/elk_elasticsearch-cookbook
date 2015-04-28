@@ -2,31 +2,28 @@
 
 [![Build Status](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook.svg)](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook)
 
-TODO: Enter the cookbook description here.
+A Simple wrapper for the elasticsearch cookbook that optimises it for Logstash 
 
 # Requirements
 
-* `apt` cookbook
-* `some` cookbook
-* `another` cookbook
-
+* `elasticsearch` cookbook
 
 # Recipes
 
 ## default
 
-Short Description
+Installs and configures elasticsearch on the node using optimized attributes
 
-1. Set up & updates apt using `apt::default`
-2. Install xyz by some proccess
-3. Include various recipes for this cookbook:
-    * `elk_elasticsearch::install`
-        - which includes `elk_elasticsearch::another`
-    * `elk_elasticsearch::configure`
-
-## install
-
-More info about the install recipe
+1. Install Elasticsearch
+   * Uses the following `elasticsearch` cookbook atts
+     - `['elasticsearch']['allocated_memory']` : 45% of Host Memory
+     - `['elasticsearch']['cluster']['name']` : "#{node.chef_environment}_logstash"
+     - `['elasticsearch']['path']['logs']` : <Disk w/ most free space>/elasticsearch/logs
+     - `['elasticsearch']['path']['data']` : <Disk w/ most free space>/elasticsearch/data
+     - `['elasticsearch']['custom_config']['index.number_of_shards']` : 3
+     - `['elasticsearch']['custom_config']['indices.memory.index_buffer_size']` : '50%'
+     - `['elasticsearch']['custom_config']['index.translog.flush_threshold_ops']` : 50000
+     
 
 # Usage
 
