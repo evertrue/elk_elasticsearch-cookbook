@@ -18,8 +18,8 @@ Installs and configures elasticsearch on the node using optimized attributes
    * Uses the following `elasticsearch` cookbook atts
      - `['elasticsearch']['allocated_memory']` : 45% of Host Memory
      - `['elasticsearch']['cluster']['name']` : "#{node.chef_environment}_logstash"
-     - `['elasticsearch']['path']['logs']` : <Disk w/ most free space>/elasticsearch/logs
-     - `['elasticsearch']['path']['data']` : <Disk w/ most free space>/elasticsearch/data
+     - `['elasticsearch']['path']['logs']` : [Disk w/ most free space]/elasticsearch/logs
+     - `['elasticsearch']['path']['data']` : [Disk w/ most free space]/elasticsearch/data
      - `['elasticsearch']['custom_config']['index.number_of_shards']` : 3
      - `['elasticsearch']['custom_config']['indices.memory.index_buffer_size']` : '50%'
      - `['elasticsearch']['custom_config']['index.translog.flush_threshold_ops']` : 50000
