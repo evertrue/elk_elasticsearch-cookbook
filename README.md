@@ -1,8 +1,6 @@
-# elk_elasticsearch
+# elk_elasticsearch [![Build Status](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook.svg)](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook) [![Dependency Status](https://gemnasium.com/evertrue/elk_forwarder-cookbook.svg)](https://gemnasium.com/evertrue/elk_forwarder-cookbook)
 
-[![Build Status](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook.svg)](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook)
-
-A Simple wrapper for the elasticsearch cookbook that optimises it for Logstash 
+A Simple wrapper for the elasticsearch cookbook that optimises it for Logstash
 
 # Requirements
 
@@ -23,7 +21,7 @@ Installs and configures elasticsearch on the node using optimized attributes
      - `['elasticsearch']['custom_config']['index.number_of_shards']` : 3
      - `['elasticsearch']['custom_config']['indices.memory.index_buffer_size']` : '50%'
      - `['elasticsearch']['custom_config']['index.translog.flush_threshold_ops']` : 50000
-     
+
 
 # Usage
 
