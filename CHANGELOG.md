@@ -21,13 +21,9 @@ create too much noise in the file. People will have to assume that the
 missing sections were intentionally left out because they contained no
 notable changes.
 
-## 0.0.1 - YYYY-MM-DD
+## 0.0.1 - 2015-05-12
 ### Added
-- This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
-- CNAME file to enable GitHub Pages custom domain
-- README now contains answers to common questions about CHANGELOGs
-- Good examples and basic guidelines, including proper date formatting.
-- Counter-examples: "What makes unicorns cry?"
+- Initial Testing Release 
 
 [unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.8...HEAD
 [0.0.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2
