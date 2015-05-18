@@ -1,5 +1,5 @@
 set['elasticsearch']['version'] = '1.4.4'
-set['elasticsearch']['cluster']['name'] = "elk-#{node.chef_environment}"
+set['elasticsearch']['cluster']['name'] = "#{node.chef_environment}-elk"
 
 set['elasticsearch']['index']['search']['slowlog']['threshold']['query'] = {
   'warn' => '5s',
