@@ -19,3 +19,5 @@ node.set['elasticsearch']['node.master'] = node['roles'].include?('es_master')
 node.set['elasticsearch']['node.data'] = true
 
 include_recipe 'elasticsearch'
+include_recipe 'elasticsearch::plugins'
+include_recipe 'elasticsearch::search_discovery'
