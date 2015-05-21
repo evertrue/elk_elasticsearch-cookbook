@@ -31,3 +31,6 @@ set['java']['jdk_version'] = '7'
 allocated_memory = "#{(node['memory']['total'].to_i * 0.5).floor / 1024}m"
 set['elasticsearch']['allocated_memory'] = allocated_memory
 default['elasticsearch']['index_base_key'] = 'default-0'
+
+set['elasticsearch']['discovery']['search_query'] = "recipes:elk_elasticsearch\\:\\:default AND chef_environment:#{node.chef_environment}"
+
