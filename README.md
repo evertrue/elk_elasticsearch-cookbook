@@ -1,6 +1,6 @@
-# elk_elasticsearch [![Build Status](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook.svg)](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook) [![Dependency Status](https://gemnasium.com/evertrue/elk_forwarder-cookbook.svg)](https://gemnasium.com/evertrue/elk_forwarder-cookbook)
+# elk_elasticsearch [![Build Status](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook.svg)](https://travis-ci.org/evertrue/elk_elasticsearch-cookbook) [![Dependency Status](https://gemnasium.com/evertrue/elk_elasticsearch-cookbook.svg)](https://gemnasium.com/evertrue/elk_elasticsearch-cookbook)
 
-A Simple wrapper for the elasticsearch cookbook that optimises it for Logstash
+A Simple wrapper for the elasticsearch cookbook that optimises it for Logstash.  This cookbook will automatically discover and cluster with node with the `elk_elasticsearch::default` recipe in their expanded run list
 
 # Requirements
 
@@ -13,15 +13,22 @@ A Simple wrapper for the elasticsearch cookbook that optimises it for Logstash
 Installs and configures elasticsearch on the node using optimized attributes
 
 1. Install Elasticsearch
-   * Uses the following `elasticsearch` cookbook atts
-     - `['elasticsearch']['allocated_memory']` : 45% of Host Memory
-     - `['elasticsearch']['cluster']['name']` : "#{node.chef_environment}_logstash"
-     - `['elasticsearch']['path']['logs']` : [Disk w/ most free space]/elasticsearch/logs
-     - `['elasticsearch']['path']['data']` : [Disk w/ most free space]/elasticsearch/data
-     - `['elasticsearch']['custom_config']['index.number_of_shards']` : 3
-     - `['elasticsearch']['custom_config']['indices.memory.index_buffer_size']` : '50%'
-     - `['elasticsearch']['custom_config']['index.translog.flush_threshold_ops']` : 50000
-
+  * Uses the following `elasticsearch` cookbook atts
+    - `['elasticsearch']['allocated_memory']` : 50% of Host Memory
+    - `['elasticsearch']['cluster']['name']` : "#{node.chef_environment}-elk"
+    - `['elasticsearch']['path']['logs']` : [first ephemeral if exists]/elasticsearch/logs
+    - `['elasticsearch']['path']['data']` : [first ephemeral if exists]/elasticsearch/data
+    - `['elasticsearch']['custom_config']['index.number_of_shards']` : 3
+    - `['elasticsearch']['custom_config']['indices.memory.index_buffer_size']` : '50%'
+    - `['elasticsearch']['custom_config']['index.translog.flush_threshold_ops']` : 50000
+  * Installs Java 7 (OpenJDK)
+2. Installs the following plugins
+  * elasticsearch/elasticsearch-cloud-aws
+  * sonian/elasticsearch-jetty
+  * mobz/elasticsearch-head
+  * royrusso/elasticsearch-HQ
+3. Discovers cluster
+  * Searches chef for nodes with the `elk_elasticsearch` recipe in the same env
 
 # Usage
 
