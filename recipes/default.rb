@@ -9,8 +9,10 @@ include_recipe 'java'
 include_recipe 'storage'
 
 if node['storage']['ephemeral_mounts'].any?
-  set['elasticsearch']['path']['logs'] = "#{node['storage']['ephemeral_mounts']}/elasticsearch/logs"
-  set['elasticsearch']['path']['data'] = "#{node['storage']['ephemeral_mounts']}/elasticsearch/data"
+  node.set['elasticsearch']['path']['logs'] =
+    "#{node['storage']['ephemeral_mounts'].first}/elasticsearch/logs"
+  node.set['elasticsearch']['path']['data'] =
+    "#{node['storage']['ephemeral_mounts'].first}/elasticsearch/data"
 end
 
 include_recipe 'elasticsearch'
