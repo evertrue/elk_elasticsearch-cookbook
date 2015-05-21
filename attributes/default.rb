@@ -34,3 +34,6 @@ default['elasticsearch']['index_base_key'] = 'default-0'
 
 set['elasticsearch']['discovery']['search_query'] = "recipes:elk_elasticsearch\\:\\:default AND chef_environment:#{node.chef_environment}"
 
+set['elasticsearch']['custom_config']['index.number_of_shards'] = 3
+set['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '50%'
+set['elasticsearch']['custom_config']['index.translog.flush_threshold_ops'] = 50_000
