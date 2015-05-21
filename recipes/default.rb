@@ -15,4 +15,7 @@ if node['storage']['ephemeral_mounts'].any?
     "#{node['storage']['ephemeral_mounts'].first}/elasticsearch/data"
 end
 
+node.set['elasticsearch']['node.master'] = node['roles'].include?('es_master')
+node.set['elasticsearch']['node.data'] = true
+
 include_recipe 'elasticsearch'
