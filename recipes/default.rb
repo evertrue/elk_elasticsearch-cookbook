@@ -4,5 +4,6 @@
 #
 # Copyright (c) 2015 EverTrue, inc., All Rights Reserved.
 
+include_recipe 'elk_elasticsearch::ruby'
 
 include_recipe 'elk_elasticsearch::install'
