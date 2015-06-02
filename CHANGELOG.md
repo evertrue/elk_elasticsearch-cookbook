@@ -6,6 +6,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Improve argument against commit logs.
 
+## [0.0.3] - 2015-06-01
+### Changed
+- Move all attribute overrides to the Install recipe to avoid accidental attribute leakage which could be very detrimental to upsteam users
+
+### Removed
+- Version pins on elasticsearch and storage cookbooks
+
 ## [0.0.2] - 2015-05-28
 ### Added
 - Install and Ruby Recipes
@@ -17,5 +24,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial Testing Release
 
-[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.8...HEAD
-[0.0.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2
+[unreleased]: https://github.com/evertrue/elk_elasticsearch/compare/v0.0.8...HEAD
+[0.0.2]: https://github.com/evertrue/elk_elasticsearch/compare/v0.0.1...v0.0.2
+[0.0.3]: https://github.com/evertrue/elk_elasticsearch/compare/v0.0.2...v0.0.3
