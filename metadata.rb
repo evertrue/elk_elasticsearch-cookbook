@@ -8,6 +8,6 @@ version          '0.0.2'
 
 supports 'ubuntu', '>= 12.04'
 
-depends 'elasticsearch', '~> 0.3'
-depends 'storage', '~> 2.2'
+depends 'elasticsearch'
+depends 'storage'
 depends 'java'
