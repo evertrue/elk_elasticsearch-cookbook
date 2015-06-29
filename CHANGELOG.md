@@ -4,7 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Changed
-- Improve argument against commit logs.
+
+## [0.1.0] - 2015-06-01
+### Added
+- Added es_master role for TK tests
+
+### Changed
+- Now using all ephemeral mounts instead of just the first
 
 ## [0.0.3] - 2015-06-01
 ### Changed
