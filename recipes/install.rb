@@ -44,10 +44,9 @@ node.set['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] =
 node.set['elasticsearch']['custom_config']['index.translog.flush_threshold_ops'] = 50_000
 
 if node['storage']['ephemeral_mounts'].any?
-  node.set['elasticsearch']['path']['logs'] =
-    "#{node['storage']['ephemeral_mounts'].first}/elasticsearch/logs"
-  node.set['elasticsearch']['path']['data'] =
-    "#{node['storage']['ephemeral_mounts'].first}/elasticsearch/data"
+  node.set['elasticsearch']['path']['data'] = node['storage']['ephemeral_mounts'].map do |mount|
+    "#{mount}/elasticsearch/data"
+  end.sort
 end
 
 node.set['elasticsearch']['node.master'] = node['roles'].include?('es_master')
