@@ -43,7 +43,8 @@ node.set['elasticsearch']['custom_config']['index.number_of_shards'] = 3
 node.set['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '50%'
 node.set['elasticsearch']['custom_config']['index.translog.flush_threshold_ops'] = 50_000
 
-if node['storage']['ephemeral_mounts'].any?
+if node['storage']['ephemeral_mounts'] &&
+   node['storage']['ephemeral_mounts'].any?
   node.set['elasticsearch']['path']['data'] = node['storage']['ephemeral_mounts'].map do |mount|
     "#{mount}/elasticsearch/data"
   end.sort
