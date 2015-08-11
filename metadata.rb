@@ -4,7 +4,7 @@ maintainer_email 'devops@evertrue.com'
 license          'all_rights'
 description      'Installs/Configures elk_elasticsearch'
 long_description 'Installs/Configures elk_elasticsearch'
-version          '0.1.0'
+version          '0.1.1'
 
 supports 'ubuntu', '>= 12.04'
 

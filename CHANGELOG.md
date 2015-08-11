@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Changed
 
+## [0.1.1] - 2015-08-11
+### Changed
+- Add `nil` check on `node['storage']` attribute
+
 ## [0.1.0] - 2015-06-01
 ### Added
 - Added es_master role for TK tests
