@@ -9,5 +9,5 @@ version          '0.1.1'
 supports 'ubuntu', '>= 12.04'
 
 depends 'elasticsearch', '~> 0.3.11'
-depends 'storage'
-depends 'java'
+depends 'storage', '~> 2.2'
+depends 'java', '~> 1.0'
