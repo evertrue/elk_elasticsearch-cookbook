@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Changed
 
+## [1.0.1] - 2015-10-15
+### Changed
+- Lowered memory cap to 40% of system total because we're getting OOMs
+
 ## [1.0.0] - 2015-09-16
 ### Added
 - Version Pins
