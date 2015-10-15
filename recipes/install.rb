@@ -32,7 +32,7 @@ node.set['elasticsearch']['plugins'] = {
   }
 }
 
-allocated_memory = "#{(node['memory']['total'].to_i * 0.5).floor / 1024}m"
+allocated_memory = "#{(node['memory']['total'].to_i * 0.4).floor / 1024}m"
 node.set['elasticsearch']['allocated_memory'] = allocated_memory
 node.set['elasticsearch']['index_base_key'] = 'default-0'
 
