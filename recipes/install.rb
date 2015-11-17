@@ -41,6 +41,8 @@ node.set['elasticsearch']['discovery']['search_query'] =
 
 node.set['elasticsearch']['custom_config']['index.number_of_shards'] = 3
 node.set['elasticsearch']['custom_config']['indices.memory.index_buffer_size'] = '50%'
+node.set['elasticsearch']['custom_config']['indices.breaker.fielddata.limit'] = '65%'
+node.set['elasticsearch']['custom_config']['indices.fielddata.cache.size'] = '55%'
 node.set['elasticsearch']['custom_config']['index.translog.flush_threshold_ops'] = 50_000
 
 if node['storage']['ephemeral_mounts'] &&
